@@ -3,6 +3,7 @@
 import { Disclosure } from "@headlessui/react";
 import { X, Menu } from "lucide-react";
 import ConnectWallet from "@/components/layout/connect";
+import ToggleDark from "@/components/layout/toggle-dark";
 import { navigation } from '@/lib/constants/misc';
 import { cn } from "@/lib/utils";
 
@@ -16,19 +17,14 @@ const Header = ({ children }: { children: React.ReactNode }) => {
 			>
 				{({ open }) => (
 					<>
-						<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+						<div className="mx-auto px-4 sm:px-6 lg:px-8">
 							<div className="flex h-16 justify-between">
 								<div className="flex">
 									<div className="flex flex-shrink-0 items-center">
 										<img
-											className="block h-8 w-auto lg:hidden"
-											src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-											alt="Starknet UI Starterkit"
-										/>
-										<img
-											className="hidden h-8 w-auto lg:block"
-											src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-											alt="Starknet UI Starterkit"
+											className="block h-8 w-auto"
+											src="./logo.svg"
+											alt="logo"
 										/>
 									</div>
 									<div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
@@ -37,20 +33,21 @@ const Header = ({ children }: { children: React.ReactNode }) => {
 												key={item.name}
 												href={item.href}
 												className={cn(
-													item.current
-														? "border-indigo-500 text-gray-900"
+													window.location.pathname === item.href
+														? "border-[#5aa5ff] text-gray-900"
 														: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700",
 													"inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium"
 												)}
-												aria-current={item.current ? "page" : undefined}
+												aria-current={window.location.pathname === item.href ? "page" : undefined}
 											>
 												{item.name}
 											</a>
 										))}
 									</div>
 								</div>
-								<div className="hidden sm:ml-6 sm:flex sm:items-center">
+								<div className="hidden sm:flex visible ml-6 items-center gap-4">
 									<ConnectWallet />
+									<ToggleDark />
 								</div>
 								<div className="-mr-2 flex items-center sm:hidden">
 									{/* Mobile menu button */}
@@ -81,30 +78,29 @@ const Header = ({ children }: { children: React.ReactNode }) => {
 										as="a"
 										href={item.href}
 										className={cn(
-											item.current
+											window.location.pathname === item.href
 												? "border-indigo-500 bg-indigo-50 text-indigo-700"
 												: "border-transparent text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800",
 											"block border-l-4 py-2 pl-3 pr-4 text-base font-medium"
 										)}
-										aria-current={item.current ? "page" : undefined}
+										aria-current={window.location.pathname === item.href ? "page" : undefined}
 									>
 										{item.name}
 									</Disclosure.Button>
 								))}
 							</div>
 							<div className="border-t border-gray-200 pb-3 pt-4">
-								<ConnectWallet />
+								<div className="mx-4 flex gap-4">
+									<ConnectWallet />
+									<ToggleDark />
+								</div>
 							</div>
 						</Disclosure.Panel>
 					</>
 				)}
 			</Disclosure>
 
-			<div className="py-10">
-				<main>
-					<div className="mx-auto max-w-7xl sm:px-6 lg:px-8">{children}</div>
-				</main>
-			</div>
+			<main className="py-10 mx-auto sm:px-6 lg:px-8">{children}</main>
 		</div>
 	);
 };
