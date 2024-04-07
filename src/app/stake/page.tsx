@@ -7,7 +7,7 @@ export default function Home() {
                   </h1>
               </header>
               <p>
-                  Get started with your dApp development with pre-configed setting for wallet connection and Starknet React library for interacting with Starknet blockchain.
+                  Stake your ██████. Coming soon.
               </p>
           </div>
       );

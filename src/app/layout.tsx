@@ -26,12 +26,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn("h-screen", inter.className)}>
         <StarknetProvider>
-          <ThemeProvider attribute="class" defaultTheme="light"
-            disableTransitionOnChange
-          >
-            <Header>
-              {children}
-            </Header>
+          <ThemeProvider attribute="class" defaultTheme="light">
+            <div className="h-screen">
+              <Header />
+              <main className="py-10 mx-auto sm:px-6 lg:px-8">{children}</main>
+            </div>
           </ThemeProvider>
         </StarknetProvider>
       </body>
