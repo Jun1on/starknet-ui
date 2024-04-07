@@ -24,13 +24,13 @@ export default function ConnectModal() {
 							<Button
 								key={connector.id}
 								onClick={() => connect({ connector })}
-								disabled={!connector.available()}
+								// disabled={!connector.available()}
 							>
-								<img
+								{/* <img
 									src={connector.icon.dark}
 									className="w-4 h-4 mr-2"
-								/>
-								Connect {connector.name}
+								/> */}
+								Connect {capFirst(connector.id)}
 							</Button>
 						))}
 					</div>
@@ -38,4 +38,7 @@ export default function ConnectModal() {
 			</Dialog>
 		</div>
 	);
+}
+function capFirst(str: string): string {
+	return str.charAt(0).toUpperCase() + str.slice(1);
 }
