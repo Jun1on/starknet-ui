@@ -21,11 +21,7 @@ export default function Component() {
 					</div>
 					<div className="flex items-center space-x-4">
 						<div className="space-y-1">
-							<h3 className="text-lg font-semibold">Share your favorite videos</h3>
-							<p className="text-sm text-gray-500 dark:text-gray-400">
-								Express yourself through the power of video. Show the world your talent, share your stories, and
-								connect with the community.
-							</p>
+							<h3 className="text-2xl font-semibold">Download our app</h3>
 						</div>
 					</div>
 				</div>
@@ -42,11 +38,7 @@ export default function Component() {
 					</div>
 					<div className="flex items-center space-x-4">
 						<div className="space-y-1">
-							<h3 className="text-lg font-semibold">Get matched with a group of people</h3>
-							<p className="text-sm text-gray-500 dark:text-gray-400">
-								Discover new friends who share your interests. Our algorithm will connect you with like-minded
-								individuals for engaging conversations and fun activities.
-							</p>
+							<h3 className="text-2xl font-semibold">Get matched with a group of people</h3>
 						</div>
 					</div>
 				</div>
@@ -63,11 +55,7 @@ export default function Component() {
 					</div>
 					<div className="flex items-center space-x-4">
 						<div className="space-y-1">
-							<h3 className="text-lg font-semibold">Find friends who vibe with you</h3>
-							<p className="text-sm text-gray-500 dark:text-gray-400">
-								Connect with your tribe. Whether you're into music, movies, or memes, you'll find your people here.
-								Join the conversation and let your personality shine.
-							</p>
+							<h3 className="text-2xl font-semibold">Find friends who vibe with you</h3>
 						</div>
 					</div>
 				</div>
@@ -77,7 +65,7 @@ export default function Component() {
 				href="https://instagram.com"
 				target="_blank"
 			>
-				DM us to get started
+				Get started
 			</Link>
 		</div>
 	)
