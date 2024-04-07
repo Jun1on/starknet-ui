@@ -14,7 +14,7 @@ export default function Header() {
 	return (
 		<Disclosure
 			as="nav"
-			className="border-b border-gray-200 bg-white"
+			className="border-b border-gray-200"
 		>
 			{({ open }) => (
 				<>
@@ -35,7 +35,7 @@ export default function Header() {
 											href={item.href}
 											className={cn(
 												pathname === item.href
-													? "border-[#5aa5ff] text-gray-900"
+													? "border-[#5aa5ff]"
 													: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700",
 												"inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium"
 											)}
